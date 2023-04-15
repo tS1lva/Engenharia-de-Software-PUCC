@@ -1,4 +1,5 @@
-#VERSÃO DE TESTE PROGRAMA DE PROJETO INTEGRADOR
+#ENTREGA 01 PROGRAMA DE PROJETO INTEGRADOR
+
 qualidade = ''
 
 MP10 = float(input("insira uma amostra MP10: "))
@@ -45,4 +46,5 @@ elif MP10 > 50 or MP2_5 > 25 or O3 > 100 or CO > 9 or NO2 > 200 or SO2 > 20:
 else:#(MP10 >= 0 and MP10<=50 ) and (MP2_5 >= 0 and MP2_5 <=25) and (O3 >= 0 and O3 <= 100) and (CO >= 0 and CO <= 9) and (NO2 >= 0 and NO2 <= 200) and (SO2 >= 0 and SO2 <= 20):
     #print("qualidade boa")
     qualidade = 'Qualidade boa' '\nNão há efeitos na saude'
+    
 print(qualidade)
