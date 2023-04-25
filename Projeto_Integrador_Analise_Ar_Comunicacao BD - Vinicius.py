@@ -31,6 +31,7 @@ SO2 = float(input("Insira uma amostra SO2: "))
 while SO2 < 0:
     SO2 = float(input("Insira uma amostra positiva para SO2: "))
 
+#ORACLE
 connection = oracledb.connect(
     user='bd240223112',
     password='Oosxb4',
@@ -39,6 +40,9 @@ connection = oracledb.connect(
 print("Successfully connected to Oracle Database")
 
 cursor = connection.cursor()
+
+
+
 
 # Comando para criar tabela no banco de dados
 
@@ -59,10 +63,22 @@ cursor.execute("""
 cursor.execute("INSERT INTO amostras (MP10, MP2_5, O3, CO, NO2, SO2) VALUES (:val1, :val2, :val3, :val4, :val5, :val6)", 
                {'val1': MP10, 'val2': MP2_5, 'val3': O3, 'val4': CO, 'val5': NO2, 'val6': SO2})
 
+
+
+cursor.execute("SELECT * FROM AMOSTRAS WHERE ID = 1")
+
+res = cursor.fetchall()
+
+
+for row in res:
+    print(row)
+
+cursor.close()
+
+
+
 # Salvando as alterações no banco de dados
 connection.commit()
 
 # Fechando a conexão com o banco de dados
 connection.close()
-
-
