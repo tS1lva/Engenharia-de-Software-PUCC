@@ -41,6 +41,8 @@ print("Successfully connected to Oracle Database")
 cursor = connection.cursor()
 
 # Comando para criar tabela no banco de dados
+
+'''
 cursor.execute("""
      create table amostras (
         id number generated always as identity,
@@ -52,10 +54,10 @@ cursor.execute("""
         SO2 number(5),
         primary key (id)
         )""")
-
+'''
 
 cursor.execute("INSERT INTO amostras (MP10, MP2_5, O3, CO, NO2, SO2) VALUES (:val1, :val2, :val3, :val4, :val5, :val6)", 
-               {'val1': MP10, 'val2': MP2_5, 'val3': O3, 'val4': CO, 'val5': NO2, 'val6': CO2})
+               {'val1': MP10, 'val2': MP2_5, 'val3': O3, 'val4': CO, 'val5': NO2, 'val6': SO2})
 
 # Salvando as alterações no banco de dados
 connection.commit()
