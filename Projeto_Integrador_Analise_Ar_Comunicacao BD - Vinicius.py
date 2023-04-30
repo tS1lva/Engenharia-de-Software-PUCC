@@ -7,6 +7,8 @@ import oracledb
 qualidade = ''
 
 #ENTRADAS - Inserção das amostras. Validação para que o usuário digite uma amostra válida (maior ou igual a zero)
+
+"""
 MP10 = float(input("Insira uma amostra MP10: "))
 while MP10 < 0:
     MP10 = float(input("Insira uma amostra positiva para MP10: "))
@@ -30,6 +32,9 @@ while NO2 < 0:
 SO2 = float(input("Insira uma amostra SO2: "))
 while SO2 < 0:
     SO2 = float(input("Insira uma amostra positiva para SO2: "))
+
+"""
+
 
 #ORACLE
 connection = oracledb.connect(
@@ -60,12 +65,15 @@ cursor.execute("""
         )""")
 '''
 
+
+
+"""
 cursor.execute("INSERT INTO amostras (MP10, MP2_5, O3, CO, NO2, SO2) VALUES (:val1, :val2, :val3, :val4, :val5, :val6)", 
                {'val1': MP10, 'val2': MP2_5, 'val3': O3, 'val4': CO, 'val5': NO2, 'val6': SO2})
 
 
-
-cursor.execute("SELECT * FROM AMOSTRAS WHERE ID = 1")
+"""
+cursor.execute("SELECT * FROM AMOSTRAS WHERE ID =1")
 
 res = cursor.fetchall()
 
