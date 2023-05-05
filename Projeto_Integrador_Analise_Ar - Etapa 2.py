@@ -10,7 +10,7 @@ connection = oracledb.connect(
     password='Oosxb4',
     dsn='172.16.12.14:1521/XE')
 
-print("Conexão com o Banco de Dados bem sucedida.")
+print("\nConexão com o Banco de Dados bem sucedida.\n\n")
 
 #Busca dos dados de média do BD
 cursor = connection.cursor()
@@ -25,6 +25,10 @@ O3 = amostras[2]
 CO = amostras[3]
 NO2 = amostras[4]
 SO2 = amostras[5]
+
+#EXIBIR VALORES MEDIOS DAS AMOSTRAS
+print(f'Valores médios das amostras: MP10: {MP10:.2f} | MP2_5: {MP2_5:.2f} | O3: {O3:.2f} | CO: {CO:.2f} | NO2: {NO2:.2f} | SO2: {SO2:.2f}')
+
 
 #PROCESSAMENTO DA CLASSIFICAÇÃO DO AR E IMPLICAÇÕES NA SAÚDE
 if MP10 > 250 or MP2_5 > 125 or O3 > 200 or CO > 15 or NO2 > 1130 or SO2 > 800:
