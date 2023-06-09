@@ -21,7 +21,7 @@ while True:
           "\nOpção 5 --- Sair")
     while True:
         try:
-            opcao = int(input("Qual opção deseja escolher: "))
+            opcao = int(input("Selecione uma opção: "))
             break
         except ValueError:
             print("Por favor digite um numero inteiro")
